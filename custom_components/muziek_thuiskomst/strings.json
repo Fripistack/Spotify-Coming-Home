@@ -1,0 +1,101 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add person",
+        "description": "Whose music should follow them inside? You can add more people later, each with their own Spotify account.",
+        "data": {"person": "Person", "spotify": "Spotify account (media player)"}
+      },
+      "speakers": {
+        "title": "Speakers",
+        "description": "Pick the speakers. The first one is the group leader; the others are joined to it. 'Spotify Connect device' is the name Spotify shows for the leader (empty = name of the first speaker).",
+        "data": {
+          "speakers": "Speakers",
+          "spotify_source": "Spotify Connect device",
+          "set_volume": "Set volume on transfer",
+          "volume": "Volume",
+          "sonos_fallback": "Fallback: let Sonos play the track itself when Spotify Connect doesn't see the speaker"
+        }
+      },
+      "logic": {
+        "title": "Logic",
+        "description": "When should the music move?",
+        "data": {
+          "only_alone": "Only when nobody else is home",
+          "start_time": "From",
+          "end_time": "Until",
+          "pause_margin": "Also when Spotify was paused recently (minutes)",
+          "bt_sensor": "Phone Bluetooth sensor (Companion app, optional)",
+          "car_name": "Car name in Bluetooth",
+          "bt_timeout": "Max wait for the car to switch off (minutes)"
+        },
+        "data_description": {
+          "bt_sensor": "With this sensor the integration waits until you switch off the car, so music keeps playing in the car until you get out.",
+          "car_name": "Part of the name is enough, e.g. 'Skoda' or the MAC address."
+        }
+      }
+    },
+    "error": {
+      "no_speakers": "Pick at least one speaker.",
+      "car_name_required": "Enter the car name when you choose a Bluetooth sensor."
+    },
+    "abort": {"already_configured": "This person is already set up."}
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Settings",
+        "menu_options": {"speakers": "Speakers and volume", "logic": "Logic (when)", "spotify": "Spotify account"}
+      },
+      "spotify": {"title": "Spotify account", "data": {"spotify": "Spotify account (media player)"}},
+      "speakers": {
+        "title": "Speakers",
+        "description": "The first speaker is the group leader; the others are joined to it.",
+        "data": {
+          "speakers": "Speakers",
+          "spotify_source": "Spotify Connect device",
+          "set_volume": "Set volume on transfer",
+          "volume": "Volume",
+          "sonos_fallback": "Fallback: let Sonos play the track itself when Spotify Connect doesn't see the speaker"
+        }
+      },
+      "logic": {
+        "title": "Logic",
+        "data": {
+          "only_alone": "Only when nobody else is home",
+          "start_time": "From",
+          "end_time": "Until",
+          "pause_margin": "Also when Spotify was paused recently (minutes)",
+          "bt_sensor": "Phone Bluetooth sensor (Companion app, optional)",
+          "car_name": "Car name in Bluetooth",
+          "bt_timeout": "Max wait for the car to switch off (minutes)"
+        },
+        "data_description": {
+          "bt_sensor": "With this sensor the integration waits until you switch off the car, so music keeps playing in the car until you get out.",
+          "car_name": "Part of the name is enough, e.g. 'Skoda' or the MAC address."
+        }
+      }
+    },
+    "error": {
+      "no_speakers": "Pick at least one speaker.",
+      "car_name_required": "Enter the car name when you choose a Bluetooth sensor."
+    }
+  },
+  "entity": {
+    "switch": {"enabled": {"name": "Automatic transfer"}},
+    "button": {"transfer_now": {"name": "Move to speakers now"}},
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Ready",
+          "waiting_car": "Waiting for car to switch off",
+          "transferred": "Transferred",
+          "skipped": "Skipped",
+          "error": "Error"
+        }
+      },
+      "last_transfer": {"name": "Last transferred"}
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "domain": "muziek_thuiskomst",
+  "name": "Muziek Thuiskomst",
+  "codeowners": ["@Fripistack"],
+  "config_flow": true,
+  "dependencies": ["person", "media_player"],
+  "after_dependencies": ["spotify", "sonos"],
+  "documentation": "https://github.com/Fripistack/Spotify-Coming-Home",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/Fripistack/Spotify-Coming-Home/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
