@@ -1,0 +1,101 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Persoon toevoegen",
+        "description": "Voor wie moet de muziek meekomen naar binnen? Voeg later gerust nog een persoon toe, bijvoorbeeld je partner met een eigen Spotify-account.",
+        "data": {"person": "Persoon", "spotify": "Spotify-account (mediaspeler)"}
+      },
+      "speakers": {
+        "title": "Speakers",
+        "description": "Kies de speakers. De eerste is het groepshoofd; de rest wordt eraan gekoppeld. Kies bij 'Spotify Connect-apparaat' de naam zoals Spotify het groepshoofd toont (leeg = naam van de eerste speaker).",
+        "data": {
+          "speakers": "Speakers",
+          "spotify_source": "Spotify Connect-apparaat",
+          "set_volume": "Volume instellen bij overzetten",
+          "volume": "Volume",
+          "sonos_fallback": "Noodroute: Sonos speelt het nummer zelf af als Spotify Connect de speaker niet ziet"
+        }
+      },
+      "logic": {
+        "title": "Logica",
+        "description": "Wanneer moet de muziek overgaan?",
+        "data": {
+          "only_alone": "Alleen als verder niemand thuis is",
+          "start_time": "Vanaf",
+          "end_time": "Tot",
+          "pause_margin": "Ook als Spotify net gepauzeerd is (minuten)",
+          "bt_sensor": "Bluetooth-sensor telefoon (Companion app, optioneel)",
+          "car_name": "Naam van de auto in Bluetooth",
+          "bt_timeout": "Maximaal wachten tot de auto uit is (minuten)"
+        },
+        "data_description": {
+          "bt_sensor": "Met deze sensor wacht de integratie tot je de motor uitzet, zodat de muziek in de auto doorloopt tot je uitstapt.",
+          "car_name": "Een deel van de naam is genoeg, bijv. 'Skoda' of het MAC-adres."
+        }
+      }
+    },
+    "error": {
+      "no_speakers": "Kies minstens één speaker.",
+      "car_name_required": "Vul de naam van de auto in als je een Bluetooth-sensor kiest."
+    },
+    "abort": {"already_configured": "Deze persoon is al ingesteld."}
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Instellingen",
+        "menu_options": {"speakers": "Speakers en volume", "logic": "Logica (wanneer)", "spotify": "Spotify-account"}
+      },
+      "spotify": {"title": "Spotify-account", "data": {"spotify": "Spotify-account (mediaspeler)"}},
+      "speakers": {
+        "title": "Speakers",
+        "description": "De eerste speaker is het groepshoofd; de rest wordt eraan gekoppeld.",
+        "data": {
+          "speakers": "Speakers",
+          "spotify_source": "Spotify Connect-apparaat",
+          "set_volume": "Volume instellen bij overzetten",
+          "volume": "Volume",
+          "sonos_fallback": "Noodroute: Sonos speelt het nummer zelf af als Spotify Connect de speaker niet ziet"
+        }
+      },
+      "logic": {
+        "title": "Logica",
+        "data": {
+          "only_alone": "Alleen als verder niemand thuis is",
+          "start_time": "Vanaf",
+          "end_time": "Tot",
+          "pause_margin": "Ook als Spotify net gepauzeerd is (minuten)",
+          "bt_sensor": "Bluetooth-sensor telefoon (Companion app, optioneel)",
+          "car_name": "Naam van de auto in Bluetooth",
+          "bt_timeout": "Maximaal wachten tot de auto uit is (minuten)"
+        },
+        "data_description": {
+          "bt_sensor": "Met deze sensor wacht de integratie tot je de motor uitzet, zodat de muziek in de auto doorloopt tot je uitstapt.",
+          "car_name": "Een deel van de naam is genoeg, bijv. 'Skoda' of het MAC-adres."
+        }
+      }
+    },
+    "error": {
+      "no_speakers": "Kies minstens één speaker.",
+      "car_name_required": "Vul de naam van de auto in als je een Bluetooth-sensor kiest."
+    }
+  },
+  "entity": {
+    "switch": {"enabled": {"name": "Automatisch overzetten"}},
+    "button": {"transfer_now": {"name": "Nu naar speakers"}},
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Klaar",
+          "waiting_car": "Wacht tot auto uit is",
+          "transferred": "Overgezet",
+          "skipped": "Overgeslagen",
+          "error": "Fout"
+        }
+      },
+      "last_transfer": {"name": "Laatst overgezet"}
+    }
+  }
+}
