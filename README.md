@@ -1,8 +1,13 @@
+<img src="custom_components/muziek_thuiskomst/brand/icon.png" alt="Muziek Thuiskomst" width="96" align="right">
+
 # Muziek Thuiskomst
+
+[![Openen in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Fripistack&repository=Spotify-Coming-Home&category=integration)
+[![Integratie toevoegen](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=muziek_thuiskomst)
 
 Home Assistant-integratie die je Spotify-muziek laat meekomen naar binnen. Luister je in de auto naar Spotify en kom je thuis, dan gaat dezelfde muziek op dezelfde plek verder op je Sonos-speakers.
 
-**Versie: 1.0.0**
+**Versie: 1.0.1**
 
 ## Wat doet het?
 
@@ -26,6 +31,10 @@ Ga je weer weg terwijl hij op de auto wacht, dan breekt hij af.
 - Optioneel: Home Assistant **Companion app** op Android met de sensor *Bluetooth connection* aan.
 
 ## Installatie
+
+**Snelste weg:** klik hierboven op **Openen in HACS**, kies **Downloaden** en herstart Home Assistant. Klik daarna op **Integratie toevoegen**. De knoppen openen je eigen Home Assistant; de eerste keer vraagt my.home-assistant.io om het adres van je HA.
+
+Handmatig:
 
 1. HACS → ⋮ → *Aangepaste repositories* → `https://github.com/Fripistack/Spotify-Coming-Home`, type *Integratie*.
 2. Installeer **Muziek Thuiskomst** en herstart Home Assistant.
@@ -67,6 +76,9 @@ Bij elke overzetting komt het event `muziek_thuiskomst_overgezet` voorbij, handi
 - Spotify in HA ververst ongeveer elke 30 seconden; de integratie vraagt bij thuiskomst zelf een verversing aan.
 
 ## Versiegeschiedenis
+
+### 1.0.1
+2026-11-20. Eigen icoon (zichtbaar in Home Assistant vanaf 2026.3) en knoppen "Openen in HACS" en "Integratie toevoegen" in de README.
 
 ### 1.0.0
 2026-11-20. Eerste versie: meerdere personen, speakers kiezen en groeperen, tijdvenster, "alleen als niemand thuis", wachten tot de auto-Bluetooth weg is, Sonos-noodroute, schakelaar, status-sensoren en knop.
